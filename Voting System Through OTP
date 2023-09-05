@@ -18,7 +18,9 @@ if now >= 9 and now <= 18: # if user votes from 9am to 6pm
     message = 'subject : {}\n\n{}'.format(subject, text) 
     s = smtplib.SMTP('smtp.gmail.com', 587) # created a session encapsulate an SMTP connection, port 587 (port number for gmail)
     s.starttls() #TLS (Transport Layer Security) encrypts all the SMTP commands when started on s
-    s.login("mllenahih@gmail.com", "onisomurpvnalwbb")# Login with official account to mail the otp
+    # how to get app password for gmail account
+    # https://support.google.com/accounts/answer/185833?hl=en
+    s.login("youremail@gmail.com", "yourapppassword")# Login with official account to mail the otp
     s.sendmail('&&&&&&&&&&&', email, message)# Sending mail to user that contains msg with otp
     print("Otp Sent!")
     otpverify = input("Enter OTP : ") # enter otp to verify
